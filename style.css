@@ -168,7 +168,7 @@ input{
     border: none;
     outline: none;
     font-size: large;
-    width: 200px;
+    width: 150px;
 }
 .c1{
     margin: 20px 0 10px 0
@@ -235,4 +235,31 @@ input{
 }
 .right-body::-webkit-scrollbar-track{
     border-radius: 11px;
+}
+
+#suggestion, #homework{
+    display: none;
+    position: relative;
+    top: -20px;
+    margin: 0;
+}
+.n{
+    height: 100px;
+}
+
+.addFieldBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    margin-left: 10px;
+    background-color: #2196F3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.addFieldBtn:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.4);
 }
