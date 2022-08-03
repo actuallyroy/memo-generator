@@ -241,6 +241,7 @@ ${usefulTxt.value}
 FEEDBACK
 ${feedback.value}`
     
+    copyText(text)
 }
 
 
