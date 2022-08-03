@@ -108,10 +108,20 @@ studentSelecor.onchange = () =>{
                 radioBtn.checked = false;
             })
     }
-
-    genFeedback(studentSelecor.value);
-
+    if(!newStudentInput.checked){
+        genFeedback(studentSelecor.value);
+    }else{
+        genFeedback(studentNameInput.value)
+    }
 }
+
+studentNameInput.addEventListener('focusout', () =>{
+    if(!newStudentInput.checked){
+        genFeedback(studentSelecor.value);
+    }else{
+        genFeedback(studentNameInput.value)
+    }
+})
 
 radioBtns.forEach(item => {
     item.onclick = () => {
@@ -308,11 +318,15 @@ function rand(obj){
 }
 
 function genFeedback(name){
-    if(name != 'null'){
-        feedback.value = `${feedback0[rand(feedback0)]} ${name}! ${feedback1[rand(feedback1)]} ${feedback2[rand(feedback2)]} ${feedback3[rand(feedback3)]}`
+    if(name != 'null' && name){
+        feedback.value = `${feedback0[rand(feedback0)]} ${name}! ${feedback1[rand(feedback1)]} ${feedback2[rand(feedback2)]} ${feedback3[rand(feedback3)]}\n\nHave a great day!`
     }
 }
 
 document.getElementById('changeBtn').onclick = () => {
-    genFeedback(studentSelecor.value);
+    if(!newStudentInput.checked){
+        genFeedback(studentSelecor.value);
+    }else{
+        genFeedback(studentNameInput.value)
+    }
 }
