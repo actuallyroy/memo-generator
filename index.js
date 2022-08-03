@@ -10,7 +10,7 @@ students = {
     "Amy SK": 2,
     "Jiyoon SK": 1,
     "Sumnah": 1,
-    "Jinny": 3
+    "Jinny": 4
 }
 
 studentSelecor = document.querySelector("#select-student")
@@ -225,7 +225,7 @@ document.querySelector("#copyBtn").onclick = () => {
 
     text = `${newStudentInput.checked? studentNameInput.value : studentSelecor.value} (${levelText.textContent})
 
-Class review date: ${dateInput.value}
+Class review date: ${new Date(dateInput.valueAsNumber).toString().substring(0, 15)}
 
 TOPIC TITLE: ${topicInput.value}
 
