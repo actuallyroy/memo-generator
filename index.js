@@ -1,27 +1,73 @@
-students = {
-    "Minseo": 4,
+const students = {
+    "Minseo (Emma)": 4,
     "Ethan": 4,
-    "Tahee": 2,
+    "Tahee": 3,
     "Jay": 2,
     "Joy": 4,
-    "Lucas": 1,
-    "Yerin/Lina": 1,
-    "Harry Montreal": 1,
-    "Amy SK": 2,
-    "Jiyoon SK": 1,
-    "Sumnah": 1,
+    "Lucas": 2,
+    "Yerin/Lina": 3,
+    "Harry": 4,
+    "Amy": 5,
+    "Jiyoon": 2,
+    "Sum Nah": 2,
     "Jinny": 4
 }
+const feedback0 = [
+    'Good job',
+    'Great job',
+    'Well done',
+    'Superb',
+    'Good work',
+    'Great work',
+    'Superb work',
+    'Excellent job',
+    'Excellent work',
+    'Wonderful job',
+    'Wonderful work',
+    'Very good job',
+    'Very good work',
+    'Awesome job',
+    'Awesome',
+    'Awesome work',
+    'Fantastic job',
+    'Fantastic work',
+    'Well done',
+    'Nice work',
+    'Nice job',
+    'Nicely done',
+    'A+ effort',
+    'Good effort',
+]
+const feedback1 = [
+    'I am impressed with how well you could share your thoughts and opinion on our lesson topic.',
+    'You did well in finishing our lesson topic. You were able to participate well by giving out examples and answering all the activities with determination so keep it up!',
+    'High five to that great performance! I can see that you can recall and catch-up in our lesson easily.',
+    'You were very attentive and knows how to follow instructions easily so keep it up!'
+]
+const feedback2 = [
+    'However, to be able to be fluent in speaking the English language, you should apply the new words and expressions on a daily basis and take note of the corrections made in the class.',
+    'However, sometimes you add extra verbs in a sentence so take note of this.',
+    'Please take note of the mispronounce words listed above and use the key pattern in our lesson today.',
+    'You may try acting out a role-play as a server and a customer in a restaurant and let the people you know about the food you like and how you feel.',
+    'However please take note of the corrections made in the class specially in using the key patterns listed above.'
+]
 
-studentSelecor = document.querySelector("#select-student")
-newStudentInput = document.querySelector("#new-student")
-levelText = document.querySelector(".level-text")
-dateInput = document.getElementById("date-input")
-studentNameInput = document.getElementById("input-student-name");
-leftRightButton = document.querySelectorAll(".left-right-button");
-topicInput = document.querySelector("#topic")
-usefulTxt = document.querySelector(".textarea-a");
-feedback = document.querySelector(".textarea-b");
+const feedback3 = [
+    'Overall, that was a great performance from you so just keep it going!',
+    'Overall, that was a great class. you may refer to the attached photo for your take-home task.',
+    'Overall, That was a superb class, See you again soon!',
+    'Overall, you did great in our lesson today so keep it up.',
+]
+
+const studentSelecor = document.querySelector("#select-student")
+const newStudentInput = document.querySelector("#new-student")
+const levelText = document.querySelector(".level-text")
+const dateInput = document.getElementById("date-input")
+const studentNameInput = document.getElementById("input-student-name");
+const leftRightButton = document.querySelectorAll(".left-right-button");
+const topicInput = document.querySelector("#topic")
+const usefulTxt = document.querySelector(".textarea-a");
+const feedback = document.querySelector(".textarea-b");
 
 
 for(var i = 1; i <= 10; i++) {
@@ -62,6 +108,9 @@ studentSelecor.onchange = () =>{
                 radioBtn.checked = false;
             })
     }
+
+    genFeedback(studentSelecor.value);
+
 }
 
 radioBtns.forEach(item => {
@@ -199,7 +248,7 @@ function func1() {
 
 
 document.querySelector("#copyBtn").onclick = () => {
-
+    
     pronunElems = document.querySelectorAll(".p");
     pronunTxt = ""
     var i = 1;
@@ -252,4 +301,18 @@ async function copyText(text){
             console.log(text + " copied successfully")
         )
     }
+}
+
+function rand(obj){
+    return ~~(Math.random()*obj.length);
+}
+
+function genFeedback(name){
+    if(name != 'null'){
+        feedback.value = `${feedback0[rand(feedback0)]} ${name}! ${feedback1[rand(feedback1)]} ${feedback2[rand(feedback2)]} ${feedback3[rand(feedback3)]}`
+    }
+}
+
+document.getElementById('changeBtn').onclick = () => {
+    genFeedback(studentSelecor.value);
 }

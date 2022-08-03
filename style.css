@@ -198,11 +198,11 @@ input{
     font-weight: bold;
 }
 
-#copyBtn{
+#copyBtn, #changeBtn{
     cursor: pointer;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
 }
-#copyBtn:hover{
+#copyBtn:hover, #changeBtn:hover{
     transform: scale(1.1);
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
 }
