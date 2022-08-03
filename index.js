@@ -240,5 +240,15 @@ ${usefulTxt.value}
 
 FEEDBACK
 ${feedback.value}`
-    console.log(text)
+    
+}
+
+
+async function copyText(text){
+    if(text != ""){
+        navigator.clipboard.writeText(text)
+        .then(
+            console.log(text + " copied successfully")
+        )
+    }
 }
