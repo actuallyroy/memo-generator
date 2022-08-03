@@ -68,6 +68,7 @@ const leftRightButton = document.querySelectorAll(".left-right-button");
 const topicInput = document.querySelector("#topic")
 const usefulTxt = document.querySelector(".textarea-a");
 const feedback = document.querySelector(".textarea-b");
+const outputContainer = document.querySelector("#output-container")
 
 
 for(var i = 1; i <= 10; i++) {
@@ -113,6 +114,7 @@ studentSelecor.onchange = () =>{
     }else{
         genFeedback(studentNameInput.value)
     }
+    getMemoText();
 }
 
 studentNameInput.addEventListener('focusout', () =>{
@@ -121,6 +123,7 @@ studentNameInput.addEventListener('focusout', () =>{
     }else{
         genFeedback(studentNameInput.value)
     }
+    getMemoText();
 })
 
 radioBtns.forEach(item => {
@@ -139,10 +142,12 @@ dateInput.valueAsDate = d;
 leftRightButton[0].onclick = () => {
     d = dateInput.valueAsDate
     dateInput.valueAsDate = new Date(d.setDate(d.getDate() -1))
+    getMemoText();
 }
 leftRightButton[1].onclick = () => {
     d = dateInput.valueAsDate
     dateInput.valueAsDate = new Date(d.setDate(d.getDate() +1))
+    getMemoText();
 }
 
 function getLevel(level){
@@ -241,6 +246,7 @@ function func() {
                     this.value += ` /${response.pronunciation}/`
                 }
             }
+            getMemoText();
         })           
     }
     if(this.value == "" && this.id != 'pronunciation'){
@@ -258,7 +264,11 @@ function func1() {
 
 
 document.querySelector("#copyBtn").onclick = () => {
-    
+    copyText(getMemoText())
+
+}
+
+function getMemoText(){
     pronunElems = document.querySelectorAll(".p");
     pronunTxt = ""
     var i = 1;
@@ -299,8 +309,9 @@ ${usefulTxt.value}
 
 FEEDBACK
 ${feedback.value}`
-    
-    copyText(text)
+
+    outputContainer.value = text
+    return text;
 }
 
 
@@ -320,6 +331,7 @@ function rand(obj){
 function genFeedback(name){
     if(name != 'null' && name){
         feedback.value = `${feedback0[rand(feedback0)]} ${name}! ${feedback1[rand(feedback1)]} ${feedback2[rand(feedback2)]} ${feedback3[rand(feedback3)]}\n\nHave a great day!`
+        getMemoText();
     }
 }
 
@@ -330,3 +342,17 @@ document.getElementById('changeBtn').onclick = () => {
         genFeedback(studentNameInput.value)
     }
 }
+
+document.querySelectorAll("input").forEach(item => {
+    item.oninput = () => {
+        getMemoText();
+    }
+})
+
+document.querySelectorAll("textarea").forEach(item => {
+    if(item != outputContainer){
+        item.oninput = () => {
+            getMemoText();
+        }
+    }
+})

@@ -206,3 +206,33 @@ input{
     transform: scale(1.1);
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
 }
+
+.right-body{
+    background-color: #fff7d1;
+    position: fixed;
+    height: 550px;
+    width: 350px;
+    top: calc(50% - 270px);
+    left: calc(70%);
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgb(0, 0, 0, 0.4);
+    padding: 20px;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+    border: none;
+    font-size: medium;
+}
+
+.right-body::-webkit-scrollbar{
+    height: 10px;
+    width: 10px;
+    scroll-behavior: smooth;
+}
+.right-body::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 10px;
+}
+.right-body::-webkit-scrollbar-track{
+    border-radius: 11px;
+}
