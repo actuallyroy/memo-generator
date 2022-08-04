@@ -457,6 +457,7 @@ FEEDBACK
 ${feedback.value}
 ${suggestionVal}
 ${homeworkVal}
+
 Have a great day!`
 
     outputContainer.value = text
