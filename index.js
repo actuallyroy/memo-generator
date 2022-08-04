@@ -461,7 +461,7 @@ ${pronunTxt}
 GRAMMAR REVIEW:
 ${grammarTxt}
 
-USEFUL WORDS/ EXPRESSIONS
+USEFUL WORDS/EXPRESSIONS
 ${usefulTxt.value}
 
 FEEDBACK
