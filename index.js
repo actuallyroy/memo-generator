@@ -213,6 +213,8 @@ const addSuggestionBtn = document.querySelector("#addSuggestionBtn");
 const addHomeworkBtn = document.querySelector("#addHomeworkBtn");
 const suggestion = document.querySelector("#suggestion");
 const homework = document.querySelector("#homework");
+var grammarInptSaid = document.querySelectorAll(".grammar-input-said");
+var grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
 
 
 for(var i = 1; i <= 10; i++) {
@@ -330,6 +332,17 @@ function addGrammar(val1, val2){
         grammarTable.insertBefore(elem1, grammarTable.lastChild.previousSibling.previousSibling.previousSibling)
         grammarTable.insertBefore(elem, grammarTable.lastChild.previousSibling.previousSibling.previousSibling.previousSibling)
 
+        grammarInptSaid = document.querySelectorAll(".grammar-input-said");
+        grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
+        copyGammarTxtTo();
+}
+copyGammarTxtTo();
+function copyGammarTxtTo() {
+    grammarInptSaid.forEach(item => {
+        item.addEventListener('focusout', () => {
+            item.parentElement.parentElement.nextElementSibling.firstChild.nextElementSibling.firstChild.value = item.value;
+        })
+    })
 }
 
 document.querySelector("#addGrammar").onclick = () => {
@@ -426,8 +439,6 @@ function getMemoText(){
         }
     })
 
-    grammarInptSaid = document.querySelectorAll(".grammar-input-said");
-    grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
     grammarTxt = ""
 
     for(var i = 0; i < grammarInptSaid.length; i++){
