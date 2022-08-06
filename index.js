@@ -246,6 +246,10 @@ lessonCategory.forEach(key => {
     lessonTopics.options.add(new Option(key, key))
 })
 
+lessonTopics.onchange = () => {
+    getMemoText();
+}
+
 
 for(var i = 1; i <= 10; i++) {
     document.querySelector(".select-student-level").innerHTML += `
