@@ -54,7 +54,8 @@ const feedback3 = [
     "Overall, that was a great performance form you so keep it up!",
     "Overall, that was a great performance so keep it up!",
     "Overall, that was an amazing job so keep up the good work!",
-    "Overall, that was pretty impressive so good job!"
+    "Overall, that was pretty impressive so good job!",
+    'Overall, that was an amazing class. I hope to see you soon!'
 ]
 
 const students = {
@@ -62,11 +63,16 @@ const students = {
         4,
         {
             first: [
-                ''
+                'You wer able to finish our lesson topic about ______. You were very consistent with your focus and attention inside the class. You were able to answer all the activities and cite your opinion in our discussion part.',
+                'You did well in finishing our lesson topic. You were able to participate well by giving out examples and, answering all the activities with determination so keep it up!',
+                'What I like about you is your patience and attention to answer all the activities correctly so keep this up.'
+
             ],
         
             second: [
-                "Now that you've learned the meaning and usage of the phrasal verbs_____, you may now try these out by using them on your daily conversations. Take note as well of the corrections made in the class specially in responding to questions. Make sure to always answer in a complete sentence and practice expressing your thoughts in the class even more."
+                "Now that you've learned the meaning and usage of the phrasal verbs_____, you may now try these out by using them on your daily conversations. Take note as well of the corrections made in the class specially in responding to questions. Make sure to always answer in a complete sentence and practice expressing your thoughts in the class even more.",
+                'However, sometimes you add extra verbs in a sentence.',
+                'Practice the corrections listed above and apply then on a daily basis.'
             ]
         }
     ],
@@ -101,7 +107,8 @@ const students = {
             first: [
                 'You are improving well in the class. Your reading and comprehension is good and you can now answer in simple sentences about the lesson topic.',
                 'You were very enthusiastic and engage well in the class so keep that good attitude!',
-                'You were very enthusiastic and active in answering all the activities so high five to that!'
+                'You were very enthusiastic and active in answering all the activities so high five to that!',
+                ''
             ],
         
             second: [
@@ -121,15 +128,30 @@ const students = {
     "Lucas": [
         2,
         {
-            first: feedback1,
-            second: feedback2
+            first: [
+                'You were able to learn new expressions and names of the animals(lizards and snakes). You have a good recall of new phrases and participates in all the activities actively so keep it up!',
+                "I can see that you were now improving with your pronunciation. You're very enthusiastic and quick to learn so keep it up!",
+                "You were able to comprehend the new words and phrases in our lesson today very eagerly so good job! You answer all the activities very promptly and share ideas about your favorite food as well so high five to that!"
+
+            ],
+            second: [
+                'However, we still need to work on with your pronunciation. Sometimes you mispronounce the letters(a,e,c and s) so take note of these and the grammar correction as well.',
+                "However, sometimes you mispronounce words that has the phonics sound 'sw' like swamp and swallow.You may listen more to words containing 'l' and 'n'.",
+                'However, We still need to widen your vocabulary bank for you to be able to speak more and construct simple sentences better. You can do it!'
+            ]
         }
     ],
     "Yerin/Lina": [
         3,
         {
-            first: feedback1,
-            second: feedback2
+            first: [
+                'That was a good performance form you. You have a good recall of new words and phrases and could spell them with ease so keep up the good work!',
+                'I like how you performed in our class today. You were very prompt in answering all the activities correctly. You have a good speed in reading and responds to questions with good comprehension so high five!'
+            ],
+            second: [
+                'However, pay attention to some mispronounce words listed above specially the phonic sounds long and short /i/ and /g/.',
+                'However, please pay attention to your pronunciation of words such as " sausage/ˈsɑː.sɪdʒ/ and delicious/dɪˈlɪʃ.əs/.'
+            ]
         }
     ],
     "Harry": [
