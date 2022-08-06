@@ -196,6 +196,30 @@ const students = {
     ]
 }
 
+const lessonCategory = [
+    '51Talk',
+    'Engoo Conversation',
+    'Engoo Grammar',
+    'Engoo Vocabulary',
+    "Engoo Pronunciation",
+    "Engoo English for Kids",
+    "Engoo Discussion",
+    "Engoo Conversation Topics",
+    "Engoo Travel & Culture",
+    "Engoo Health & Lifestyle",
+    "Engoo Describing Pictures",
+    "Engoo Business",
+    "One English Phonics",
+    "One English Vocabulary",
+    "One English Reading",
+    "One English Story",
+    "One English Conversation",
+    "Subject Link Lesson 1",
+    "Subject Link Lesson 2",
+    "Subject Link Lesson 3",
+    "Subject Link Lesson 4",
+    "Subject Link Lesson 5",
+]
 
 
 
@@ -213,8 +237,14 @@ const addSuggestionBtn = document.querySelector("#addSuggestionBtn");
 const addHomeworkBtn = document.querySelector("#addHomeworkBtn");
 const suggestion = document.querySelector("#suggestion");
 const homework = document.querySelector("#homework");
+const lessonTopics = document.querySelector("#lesson-topics");
 var grammarInptSaid = document.querySelectorAll(".grammar-input-said");
 var grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
+
+
+lessonCategory.forEach(key => {
+    lessonTopics.options.add(new Option(key, key))
+})
 
 
 for(var i = 1; i <= 10; i++) {
@@ -445,6 +475,7 @@ function getMemoText(){
         if(grammarInptSaid[i].value && grammarInptShdSay[i].value)
         grammarTxt += `(SAID) ${grammarInptSaid[i].value}
 (SHOULD SAY) ${grammarInptShdSay[i].value}
+
 `
     }
 
@@ -453,14 +484,13 @@ function getMemoText(){
 
 Class review date: ${new Date(dateInput.valueAsNumber).toString().substring(0, 15)}
 
-TOPIC TITLE: ${topicInput.value}
+TOPIC TITLE: ${lessonTopics.value}: ${topicInput.value}
 
 PRONUNCIATION REVIEW:
 ${pronunTxt}
 
 GRAMMAR REVIEW:
 ${grammarTxt}
-
 USEFUL WORDS/EXPRESSIONS
 ${usefulTxt.value}
 
