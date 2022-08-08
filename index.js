@@ -83,7 +83,7 @@ const students = {
             second: feedback2
         }
     ],
-    "Tahee": [
+    "Tae Hee": [
         3,
         {
             first: [
