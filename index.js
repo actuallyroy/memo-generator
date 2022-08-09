@@ -388,6 +388,11 @@ function addGrammar(val1, val2){
         grammarTable.insertBefore(elem1, grammarTable.lastChild.previousSibling.previousSibling.previousSibling)
         grammarTable.insertBefore(elem, grammarTable.lastChild.previousSibling.previousSibling.previousSibling.previousSibling)
 }
+
+document.querySelector("#one").oninput = () => {
+    getMemoText();
+}
+
 document.querySelector("#one").addEventListener('focusout', () => {
     document.querySelector("#two").value = this.grammarInptSaid[0].value
 })
