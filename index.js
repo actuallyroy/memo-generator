@@ -387,20 +387,7 @@ function addGrammar(val1, val2){
         `
         grammarTable.insertBefore(elem1, grammarTable.lastChild.previousSibling.previousSibling.previousSibling)
         grammarTable.insertBefore(elem, grammarTable.lastChild.previousSibling.previousSibling.previousSibling.previousSibling)
-
-        grammarInptSaid = document.querySelectorAll(".grammar-input-said");
-        grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
-        copyGammarTxtTo();
 }
-// copyGammarTxtTo();
-// function copyGammarTxtTo() {
-//     grammarInptSaid.forEach(item => {
-//         item.addEventListener('focusout', () => {
-//             item.parentElement.parentElement.nextElementSibling.firstChild.nextElementSibling.firstChild.value = item.value;
-//         })
-//     })
-// }
-
 document.querySelector("#one").addEventListener('focusout', () => {
     document.querySelector("#two").value = this.grammarInptSaid[0].value
 })
