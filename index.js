@@ -380,6 +380,9 @@ function addGrammar(val1, val2){
             </td>
         `
         elem.addEventListener('focusout', func1)
+        elem.oninput = () => {
+            getMemoText();
+        }
         const elem1 = document.createElement('tr');
         elem1.innerHTML = `
             <td>Should Say: </td>
@@ -387,11 +390,11 @@ function addGrammar(val1, val2){
         `
         grammarTable.insertBefore(elem1, grammarTable.lastChild.previousSibling.previousSibling.previousSibling)
         grammarTable.insertBefore(elem, grammarTable.lastChild.previousSibling.previousSibling.previousSibling.previousSibling)
+        
+        grammarInptSaid = document.querySelectorAll(".grammar-input-said");
+        grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
 }
 
-document.querySelector("#one").oninput = () => {
-    getMemoText();
-}
 
 document.querySelector("#one").addEventListener('focusout', () => {
     document.querySelector("#two").value = this.grammarInptSaid[0].value
@@ -494,7 +497,6 @@ function getMemoText(){
     })
 
     grammarTxt = ""
-
     for(var i = 0; i < grammarInptSaid.length; i++){
         if(grammarInptSaid[i].value && grammarInptShdSay[i].value)
         grammarTxt += `(SAID) ${grammarInptSaid[i].value}
