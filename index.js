@@ -392,14 +392,18 @@ function addGrammar(val1, val2){
         grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
         copyGammarTxtTo();
 }
-copyGammarTxtTo();
-function copyGammarTxtTo() {
-    grammarInptSaid.forEach(item => {
-        item.addEventListener('focusout', () => {
-            item.parentElement.parentElement.nextElementSibling.firstChild.nextElementSibling.firstChild.value = item.value;
-        })
-    })
-}
+// copyGammarTxtTo();
+// function copyGammarTxtTo() {
+//     grammarInptSaid.forEach(item => {
+//         item.addEventListener('focusout', () => {
+//             item.parentElement.parentElement.nextElementSibling.firstChild.nextElementSibling.firstChild.value = item.value;
+//         })
+//     })
+// }
+
+document.querySelector("#one").addEventListener('focusout', () => {
+    document.querySelector("#two").value = this.grammarInptSaid[0].value
+})
 
 document.querySelector("#addGrammar").onclick = () => {
     const said = document.querySelector('#one');
@@ -472,6 +476,8 @@ function func1() {
     if(inpt.value == ""){
         this.parentElement.removeChild(this.nextSibling)
         this.parentElement.removeChild(this)
+    }else{
+        this.nextElementSibling.firstChild.nextSibling.nextElementSibling.firstChild.value = inpt.value
     }
 }
 
