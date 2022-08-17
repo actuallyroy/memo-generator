@@ -189,7 +189,7 @@ const students = {
             second: feedback2
         }
     ],
-    "Sum Nah": [
+    "Sumna": [
         2,
         {
             first: [
