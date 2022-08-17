@@ -1,3 +1,4 @@
+//Data-----
 const feedback0 = [
     'Good job',
     'Great job',
@@ -244,7 +245,7 @@ const lessonCategory = [
 ]
 
 
-
+//Fields
 const studentSelecor = document.querySelector("#select-student")
 const newStudentInput = document.querySelector("#new-student")
 const levelText = document.querySelector(".level-text")
@@ -261,19 +262,21 @@ const suggestion = document.querySelector("#suggestion");
 const homework = document.querySelector("#homework");
 const lessonTopics = document.querySelector("#lesson-topics");
 const others = document.getElementById("others")
+const pronun = document.querySelector("#pronunciation");
 var grammarInptSaid = document.querySelectorAll(".grammar-input-said");
 var grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
 
-
+//Add lesson categories to the options
 lessonCategory.forEach(key => {
     lessonTopics.options.add(new Option(key, key))
 })
 
+//get memo text on category change
 lessonTopics.onchange = () => {
     getMemoText();
 }
 
-
+//add level radio buttons
 for(var i = 1; i <= 10; i++) {
     document.querySelector(".select-student-level").innerHTML += `
     <label class="level-container, container">${i}
@@ -283,12 +286,13 @@ for(var i = 1; i <= 10; i++) {
     `
 }
 
-radioBtns = document.querySelectorAll('.level-selector')
+
+//add students' list
 for(key in students){
     studentSelecor.options.add(new Option(key, key));
 }
 
-
+//new student toggle
 newStudentInput.onchange = () => {
     if(newStudentInput.checked) {
         studentNameInput.style.display = 'block';
@@ -299,7 +303,7 @@ newStudentInput.onchange = () => {
     }
 }
 
-
+//choose a student
 studentSelecor.onchange = () =>{
     let level = students[studentSelecor.value][0];
     try {
@@ -320,6 +324,8 @@ studentSelecor.onchange = () =>{
     getMemoText();
 }
 
+
+//input student name manually
 studentNameInput.addEventListener('focusout', () =>{
     if(!newStudentInput.checked){
         genFeedback(studentSelecor.value);
@@ -329,6 +335,8 @@ studentNameInput.addEventListener('focusout', () =>{
     getMemoText();
 })
 
+//radio button on change
+radioBtns = document.querySelectorAll('.level-selector')
 radioBtns.forEach(item => {
     item.onclick = () => {
         let level = Number(item.value);
@@ -336,23 +344,31 @@ radioBtns.forEach(item => {
         levelText.innerHTML = `Level ${level} (${levelTxt})`;
     }
 })
+
+//set today's date
 d = new Date();
 d.setHours(d.getHours() + d.getTimezoneOffset()/60*-1)
 d.setMinutes(d.getMinutes() + (d.getTimezoneOffset()*-1)%60)
 
 dateInput.valueAsDate = d;
 
+
+//previous date
 leftRightButton[0].onclick = () => {
     d = dateInput.valueAsDate
     dateInput.valueAsDate = new Date(d.setDate(d.getDate() -1))
     getMemoText();
 }
+
+//next date
 leftRightButton[1].onclick = () => {
     d = dateInput.valueAsDate
     dateInput.valueAsDate = new Date(d.setDate(d.getDate() +1))
     getMemoText();
 }
 
+
+//get leve of student in text
 function getLevel(level){
     let levelTxt = ""
     if(level < 4){
@@ -367,40 +383,56 @@ function getLevel(level){
     return levelTxt;
 }
 
-
+//add more grammar field
 function addGrammar(val1, val2){
+    //grammar table
     const grammarTable = document.querySelector("tbody")
-        const elem = document.createElement("tr");
-        elem.innerHTML = `
-            <td>Said: </td>
-            <td>
-                <input class="def-input grammar-input-said" type="text" value="${val1}">
-            </td>
-            <td rowspan="2">
-                
-            </td>
-        `
-        elem.addEventListener('focusout', func1)
-        elem.oninput = () => {
-            getMemoText();
-        }
-        const elem1 = document.createElement('tr');
-        elem1.innerHTML = `
-            <td>Should Say: </td>
-            <td><input class="def-input m1 grammar-input-shd-say" type="text" value="${val2}"></td>
-        `
-        grammarTable.insertBefore(elem1, grammarTable.lastChild.previousSibling.previousSibling.previousSibling)
-        grammarTable.insertBefore(elem, grammarTable.lastChild.previousSibling.previousSibling.previousSibling.previousSibling)
-        
-        grammarInptSaid = document.querySelectorAll(".grammar-input-said");
-        grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
+    
+    
+    // create grammar said field
+    const elem = document.createElement("tr");
+    //insert innerHTML
+    elem.innerHTML = `
+        <td>Said: </td>
+        <td>
+            <input class="def-input grammar-input-said" type="text" value="${val1}">
+        </td>
+        <td rowspan="2">
+            
+        </td>
+    `
+    //set focusout listeners
+    elem.addEventListener('focusout', func1)
+
+    //set input listener and get memo text on input
+    elem.oninput = () => {
+        getMemoText();
+    }
+
+    //create grammar should say field
+    const elem1 = document.createElement('tr');
+    elem1.innerHTML = `
+        <td>Should Say: </td>
+        <td><input class="def-input m1 grammar-input-shd-say" type="text" value="${val2}"></td>
+    `
+
+
+    grammarTable.insertBefore(elem1, grammarTable.lastChild.previousSibling.previousSibling.previousSibling)
+    grammarTable.insertBefore(elem, grammarTable.lastChild.previousSibling.previousSibling.previousSibling.previousSibling)
+    
+    document.querySelector("#one").focus()
+
+    grammarInptSaid = document.querySelectorAll(".grammar-input-said");
+    grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
 }
 
-
+//copy text from grammar said to should say
 document.querySelector("#one").addEventListener('focusout', () => {
-    document.querySelector("#two").value = this.grammarInptSaid[0].value
+    document.querySelector("#two").value = document.querySelector("#one").value
 })
 
+
+//grammar plus button listener
 document.querySelector("#addGrammar").onclick = () => {
     const said = document.querySelector('#one');
     const shdSay = document.querySelector('#two');
@@ -411,15 +443,16 @@ document.querySelector("#addGrammar").onclick = () => {
     }
 }
 
-const pronun = document.querySelector("#pronunciation");
-pronun.addEventListener('focusout', func)
+//pronunciation fields
+pronun.addEventListener('focusout', getPronunciation)
+
 document.querySelector("#addPronunciation").onclick = () => {
     if(pronun.value){
         const elem = document.createElement('input');
         elem.className = 'def-input';
         elem.classList.add('p');
         elem.value = pronun.value;
-        elem.addEventListener('focusout', func)
+        elem.addEventListener('focusout', getPronunciation)
         document.querySelector("#pronunBox").insertBefore(elem, pronun);
         pronun.value = ""
     }
@@ -432,8 +465,8 @@ const options = {
     }
 };
 
-
-function func() {
+//get Pronunciations from words API
+function getPronunciation() {
     if(this.value && this.value.indexOf('/') === -1){
         fetch(`https://wordsapiv1.p.rapidapi.com/words/${this.value}/pronunciation`, options)
         .then(response => response.json())
@@ -472,8 +505,6 @@ function func1() {
     if(inpt.value == ""){
         this.parentElement.removeChild(this.nextSibling)
         this.parentElement.removeChild(this)
-    }else{
-        this.nextElementSibling.firstChild.nextSibling.nextElementSibling.firstChild.value = inpt.value
     }
 }
 
