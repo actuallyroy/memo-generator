@@ -505,6 +505,8 @@ function func1() {
     if(inpt.value == ""){
         this.parentElement.removeChild(this.nextSibling)
         this.parentElement.removeChild(this)
+    }else{
+        this.nextSibling.lastChild.previousSibling.firstChild.value = inpt.value
     }
 }
 
