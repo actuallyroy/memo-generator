@@ -263,3 +263,8 @@ input{
     transform: scale(1.05);
     box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.4);
 }
+
+.o{
+    width: 490px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

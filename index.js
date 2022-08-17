@@ -260,6 +260,7 @@ const addHomeworkBtn = document.querySelector("#addHomeworkBtn");
 const suggestion = document.querySelector("#suggestion");
 const homework = document.querySelector("#homework");
 const lessonTopics = document.querySelector("#lesson-topics");
+const others = document.getElementById("others")
 var grammarInptSaid = document.querySelectorAll(".grammar-input-said");
 var grammarInptShdSay = document.querySelectorAll(".grammar-input-shd-say");
 
@@ -516,7 +517,8 @@ PRONUNCIATION REVIEW:
 ${pronunTxt}
 
 GRAMMAR REVIEW:
-${grammarTxt}
+${grammarTxt}${others.value}
+
 USEFUL WORDS/EXPRESSIONS
 ${usefulTxt.value}
 
