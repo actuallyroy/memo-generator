@@ -481,8 +481,14 @@ function getPronunciation() {
                 }else{
                     if(response.pronunciation.all){
                         this.value += ` /${response.pronunciation.all}/`
-                    }else{
-                        this.value += ` /${response.pronunciation}/`
+                    }else if(response.pronunciation.adjective){
+                        this.value += ` /${response.pronunciation.adjective}/`
+                    } else if (response.pronunciation.noun) {
+                        this.value += ` /${response.pronunciation.noun}/`;
+                    } else if (response.pronunciation.verb) {
+                        this.value += ` /${response.pronunciation.verb}/`;
+                    } else {
+                        this.value += ` /${response.pronunciation}/`;
                     }
                 }
             } catch (error) {
