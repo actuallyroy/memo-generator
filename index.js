@@ -471,14 +471,14 @@ function getPronunciation() {
         fetch(`https://wordsapiv1.p.rapidapi.com/words/${this.value}/pronunciation`, options)
         .then(response => response.json())
         .then(response => {
-            try {
+            try {   
                 if(this.previousSibling.value.indexOf('/') == -1){
                     if(response.pronunciation.all){
                         this.previousSibling.value += ` /${response.pronunciation.all}/`
                     }else{
                         this.previousSibling.value += ` /${response.pronunciation}/`
                     }
-                }else{
+                } else {
                     if(response.pronunciation.all){
                         this.value += ` /${response.pronunciation.all}/`
                     }else if(response.pronunciation.adjective){
@@ -492,10 +492,16 @@ function getPronunciation() {
                     }
                 }
             } catch (error) {
-                if(response.pronunciation.all){
-                    this.value += ` /${response.pronunciation.all}/`
-                }else{
-                    this.value += ` /${response.pronunciation}/`
+                if (response.pronunciation.all) {
+                  this.value += ` /${response.pronunciation.all}/`;
+                } else if (response.pronunciation.adjective) {
+                  this.value += ` /${response.pronunciation.adjective}/`;
+                } else if (response.pronunciation.noun) {
+                  this.value += ` /${response.pronunciation.noun}/`;
+                } else if (response.pronunciation.verb) {
+                  this.value += ` /${response.pronunciation.verb}/`;
+                } else {
+                  this.value += ` /${response.pronunciation}/`;
                 }
             }
             getMemoText();
