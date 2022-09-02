@@ -84,8 +84,8 @@ const students = {
             second: feedback2
         }
     ],
-    "Tae Hee": [
-        3,
+    "TaeHee": [
+        4,
         {
             first: [
                 'I can see that you were paying attention in the class. You could easily recall the words and phrases discussed in our lesson topic.',
@@ -212,6 +212,13 @@ const students = {
     ],
     "Jinny": [
         4,
+        {
+            first: feedback1,
+            second: feedback2
+        }
+    ],
+    "Camille": [
+        1,
         {
             first: feedback1,
             second: feedback2
