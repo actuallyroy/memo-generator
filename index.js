@@ -84,7 +84,7 @@ const students = {
             second: feedback2
         }
     ],
-    "TaeHee": [
+    "Tae Hee": [
         4,
         {
             first: [
@@ -227,29 +227,34 @@ const students = {
 }
 
 const lessonCategory = [
-    '51Talk',
-    'Engoo Conversation',
-    'Engoo Grammar',
-    'Engoo Vocabulary',
-    "Engoo Pronunciation",
-    "Engoo English for Kids",
-    "Engoo Discussion",
-    "Engoo Conversation Topics",
-    "Engoo Travel & Culture",
-    "Engoo Health & Lifestyle",
-    "Engoo Describing Pictures",
-    "Engoo Business",
-    "One English Phonics",
-    "One English Vocabulary",
-    "One English Reading",
-    "One English Story",
-    "One English Conversation",
-    "Subject Link Lesson 1",
-    "Subject Link Lesson 2",
-    "Subject Link Lesson 3",
-    "Subject Link Lesson 4",
-    "Subject Link Lesson 5",
-]
+  "51Talk",
+  "Engoo Conversation",
+  "Engoo Grammar",
+  "Engoo Vocabulary",
+  "Engoo Pronunciation",
+  "Engoo English for Kids",
+  "Engoo Discussion",
+  "Engoo Conversation Topics",
+  "Engoo Travel & Culture",
+  "Engoo Health & Lifestyle",
+  "Engoo Describing Pictures",
+  "Engoo Business",
+  "One English Phonics",
+  "One English Vocabulary",
+  "One English Reading",
+  "One English Story",
+  "One English Conversation",
+  "Subject Link Lesson 1",
+  "Subject Link Lesson 2",
+  "Subject Link Lesson 3",
+  "Subject Link Lesson 4",
+  "Subject Link Lesson 5",
+  "Bricks Reading",
+  "Easy Link",
+  "Link Start L-1",
+  "Link Start L-2",
+  "Link Start L-3",
+];
 
 
 //Fields
