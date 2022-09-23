@@ -12,6 +12,9 @@
         Memo Generator
     </div>
     <div class="main-body">
+
+
+        <!--Student's name selector-->
         <div class="c">
             <input id="input-student-name" class="select-student b" type="text" placeholder="Enter student name...">
             <select class="select-student" id="select-student" title="Choose student">
@@ -21,22 +24,40 @@
             <label class="new-student" for="new-student">New Student</label>
             <div class="level-text">Choose Level</div>
         </div>
+
+
+        <!-- Student's level selector -->
         <div class="select-student-level">
             <span class="a">LEVEL: </span>
         </div>
+
+
+        <!-- Date selector -->
         <div class="c">
             <span class="a">Class review dated: </span>
             <svg class="left-right-button" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffffff" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M163.1,40.6a8.4,8.4,0,0,0-8.8,1.7l-80,80a8.1,8.1,0,0,0,0,11.4l80,80A8.3,8.3,0,0,0,160,216a8.5,8.5,0,0,0,3.1-.6A8,8,0,0,0,168,208V48A8,8,0,0,0,163.1,40.6Z"></path></svg>
             <input id="date-input" type="date">
             <svg class="left-right-button" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffffff" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M181.7,122.3l-80-80a8.4,8.4,0,0,0-8.8-1.7A8,8,0,0,0,88,48V208a8,8,0,0,0,4.9,7.4,8.5,8.5,0,0,0,3.1.6,8.3,8.3,0,0,0,5.7-2.3l80-80A8.1,8.1,0,0,0,181.7,122.3Z"></path></svg>
         </div>
+
+
+
+        <!-- Topic Fields -->
         <div>
-            <span class="a">Topic: </span>
-            <select class="select-student" id="lesson-topics">
-                
-            </select>
-            <input class="select-student b t" type="text" id="topic" name="topic" placeholder="Eg. Vocabulary">
+            <div id="lessonTopicCont">
+                <span class="a">Topic: </span>
+
+                <select class="select-student lesson-topics" value="Hello">  
+                </select>&nbsp;
+                <input class="select-student b t" type="text" id="topic" name="topic" placeholder="Eg. Vocabulary">
+
+                <svg class="add" style="position: relative; top:15px" id="addTopicBtn" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffffff" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,24A104,104,0,1,0,232,128,104.2,104.2,0,0,0,128,24Zm40,112H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32a8,8,0,0,1,0,16Z"></path></svg>
+            </div>
         </div>
+
+
+
+        <!-- Pronunciation fields -->
         <div style="margin: 20px 0 10px 0">
             <span class="a m">PRONUNCIATION REVIEW:</span>
         </div>
@@ -44,6 +65,9 @@
             <input id="pronunciation" type="text" class="def-input p">
             <svg class="add" id="addPronunciation" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffffff" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,24A104,104,0,1,0,232,128,104.2,104.2,0,0,0,128,24Zm40,112H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32a8,8,0,0,1,0,16Z"></path></svg>
         </div>
+
+
+        <!-- Grammar Fields -->
         <div>
             <span class="a m">GRAMMAR REVIEW:</span>
             <table>
@@ -68,15 +92,26 @@
             </div>
         </div>
         
+
+        <!-- Useful words field -->
         <div class="c1">
             <span class="a m">USEFUL WORDS/EXPRESSIONS</span><br>
             <textarea class="def-input textarea-a" type="text">See attached photo for the list of new words and expressions.</textarea>
         </div>
+
+
+
+
+        <!-- Feedback field -->
         <div class="c1">
             <span class="a m">FEEDBACK</span><br>
             <textarea class="def-input textarea-b" type="text"></textarea>
             <svg id="changeBtn" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffffff" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="176.2 99.7 224.2 99.7 224.2 51.7" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><path d="M65.8,65.8a87.9,87.9,0,0,1,124.4,0l34,33.9" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><polyline points="79.8 156.3 31.8 156.3 31.8 204.3" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><path d="M190.2,190.2a87.9,87.9,0,0,1-124.4,0l-34-33.9" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
         </div>
+
+
+
+        <!-- Suggestions field -->
         <div>
             <span class="a m">SUGGESTION</span><br>
             <div class="addFieldBtn" id="addSuggestionBtn">
@@ -84,6 +119,9 @@
             </div><br>
             <textarea class="def-input textarea-b n" id="suggestion" placeholder="Suggestions..."></textarea>
         </div>
+
+
+        <!-- Homework field -->
         <div>
             <span class="a m">HOMEWORK</span><br>
             <div class="addFieldBtn" id="addHomeworkBtn">
@@ -91,7 +129,14 @@
             </div><br>
             <textarea class="def-input textarea-b n" id="homework" placeholder="Homework..."></textarea>
         </div>
+
+
+
+        <!-- Copy to clipboard Button -->
         <svg id="copyBtn" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#6918b4" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M200,32H163.7a47.8,47.8,0,0,0-71.4,0H56A16,16,0,0,0,40,48V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm-72,0a32.1,32.1,0,0,1,32,32H96A32.1,32.1,0,0,1,128,32Zm32,128H96a8,8,0,0,1,0-16h64a8,8,0,0,1,0,16Zm0-32H96a8,8,0,0,1,0-16h64a8,8,0,0,1,0,16Z"></path></svg>
+
+
+
     </div>
     <textarea class="right-body" id="output-container"></textarea>
     </div>
