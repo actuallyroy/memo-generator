@@ -163,7 +163,7 @@ const students = {
     }
   ],
   "Amy": [
-    5,
+    6,
     {
       first: [
         'What I like about you is your focus and determination to participate in the class.',
