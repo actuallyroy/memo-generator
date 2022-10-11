@@ -8,9 +8,24 @@
     <title>Memo Generator</title>
 </head>
 <body>
+    <!-- Header -->
     <div class="header">
-        Memo Generator
+        <div>
+            Memo Generator
+        </div>
+        <div>
+            <svg id="menuShowHideBtn" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#ffffff" viewBox="0 0 256 256">
+                <line id="bar2" x1="40" y1="128" x2="216" y2="128" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" style="opacity: 1.35;"></line>
+                <line id="bar1" x1="40" y1="64" x2="216" y2="64" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" style="transform: translate(0.75px, -0.1px) rotate(0deg);"></line>
+                <line id="bar3" x1="40" y1="192" x2="216" y2="192" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" style="transform: rotate(0deg) translate(-1.3px, -0.15px);"></line>
+            </svg>
+        </div>
     </div>
+
+    <div id="sidePanel">
+    </div>
+
+    <!-- Main Body -->
     <div class="main-body">
 
 
@@ -138,6 +153,8 @@
     </div>
     <textarea class="right-body" id="output-container"></textarea>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js" integrity="sha512-bHeT+z+n8rh9CKrSrbyfbINxu7gsBmSHlDCb3gUF1BjmjDzKhoKspyB71k0CIRBSjE5IVQiMMVBgCWjF60qsvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="data.js"></script>
     <script src="index.js"></script>
 
 </body>
