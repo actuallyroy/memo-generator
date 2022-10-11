@@ -10,6 +10,8 @@ let fdbkOne = []
 let fdbkTwo = []
 let fdbkThree = []
 
+let edited = false
+
 //Fields
 const studentSelecor = document.querySelector("#select-student")
 const newStudentInput = document.querySelector("#new-student")
@@ -495,43 +497,46 @@ document.querySelector("#copyBtn").onclick = () => {
       grammarTxt[grammarInptSaid[i].value] = grammarInptShdSay[i].value
     }
   }
-  if (newStudentInput.checked) {
-
-    axios.post(API + "api/new", {
-      name: studentNameInput.value,
-      level: currentStudent.level,
-      memos: [
-        {
-          date: dateInput.value,
-          topicTitle: getTopicText(),
-          pronunciationReview: pronuns,
-          grammarReview: grammarTxt,
-          others: others.value,
-          usefulWordsAndExp: usefulTxt.value,
-          feedback: parseFeedback(feedback.value),
-          suggestion: suggestion.value,
-          homework: homework.value,
-        },
-      ],
-    })
-      .then(res => {
-      console.log(res);
-    })
-  } else {
-    axios.post(API + "api/addmemo/" + currentStudent.id, {
-      date: dateInput.value,
-      topicTitle: getTopicText(),
-      pronunciationReview: pronuns,
-      grammarReview: grammarTxt,
-      others: others.value,
-      usefulWordsAndExp: usefulTxt.value,
-      feedback: parseFeedback(feedback.value),
-      suggestion: suggestion.value,
-      homework: homework.value,
-    })
-    .then(res => console.log(res))
+  if (edited) {
+    if (newStudentInput.checked) {
+  
+      axios.post(API + "api/new", {
+        name: studentNameInput.value,
+        level: currentStudent.level,
+        memos: [
+          {
+            date: dateInput.value,
+            topicTitle: getTopicText(),
+            pronunciationReview: pronuns,
+            grammarReview: grammarTxt,
+            others: others.value,
+            usefulWordsAndExp: usefulTxt.value,
+            feedback: parseFeedback(feedback.value),
+            suggestion: suggestion.value,
+            homework: homework.value,
+          },
+        ],
+      })
+        .then(res => {
+        console.log(res);
+      })
+    } else {
+      axios.post(API + "api/addmemo/" + currentStudent.id, {
+        date: dateInput.value,
+        topicTitle: getTopicText(),
+        pronunciationReview: pronuns,
+        grammarReview: grammarTxt,
+        others: others.value,
+        usefulWordsAndExp: usefulTxt.value,
+        feedback: parseFeedback(feedback.value),
+        suggestion: suggestion.value,
+        homework: homework.value,
+      })
+      .then(res => console.log(res))
+    }
   }
   copyText(getMemoText())
+  edited = false
 
 }
 
@@ -565,7 +570,7 @@ function getTopicText() {
 }
 
 function getMemoText(){
-  
+  edited = true
   //check suggestion field if not empty then get value//
   let homeworkVal = "", suggestionVal = ""
   suggestion.value ? suggestionVal = `\nSUGGESTION\n${suggestion.value}` : "";
