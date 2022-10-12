@@ -146,14 +146,17 @@ function genFeedback(name) {
     three = feedback3
   } else {
     try {
-      one = students[name][1].first;
-      two = students[name][1].second;
-      three = feedback3
+      fdbkOne = fdbkOne.concat(students[name][1].first)
+      fdbkTwo = fdbkTwo.concat(students[name][1].second);
+      fdbkThree = fdbkThree.concat(feedback3)
+      console.log(fdbkOne);
     } catch (error) {
+    } finally {
       one = fdbkOne
       two = fdbkTwo
       three = fdbkThree
     }
+    
   }
   if (name != "null" && name) {
     feedback.value = `${feedback0[rand(feedback0)]} ${name}! ${
@@ -186,6 +189,9 @@ studentSelecor.onchange = () =>{
   axios.get(API + "api/" + currentStudent.id + "/memos")
     .then(res => {
       sidePanel.innerHTML = ""
+      fdbkOne = []
+      fdbkTwo = []
+      fdbkThree= []
       res.data.memos.forEach(item => {
         //pronunciations text parse
         pronunTxt = ""
