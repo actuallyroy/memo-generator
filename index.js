@@ -146,12 +146,10 @@ function genFeedback(name) {
     three = feedback3
   } else {
     try {
-      fdbkOne = fdbkOne.concat(students[name][1].first)
-      fdbkTwo = fdbkTwo.concat(students[name][1].second);
-      fdbkThree = fdbkThree.concat(feedback3)
-      console.log(fdbkOne);
+      one = fdbkOne.concat(students[name][1].first)
+      two = fdbkTwo.concat(students[name][1].second);
+      three = fdbkThree.concat(feedback3)
     } catch (error) {
-    } finally {
       one = fdbkOne
       two = fdbkTwo
       three = fdbkThree
