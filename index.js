@@ -195,9 +195,9 @@ studentSelecor.onchange = () =>{
         pronunTxt = ""
         var i = 1;
         if (item.pronunciationReview) {
-          Object.values(item.pronunciationReview).forEach(item1 =>{
+          Object.keys(item.pronunciationReview).forEach(item1 =>{
             if(item1){
-              pronunTxt += `${i}. ${item1}\n`
+              pronunTxt += `${i}. ${item1} ${item.pronunciationReview[item1]}\n`
               i++;
             }
           })
